@@ -1,43 +1,31 @@
 import React, { useState, useRef } from 'react';
 
 const CreditCardInput: React.FC = () => {
-  const [values, setValues] = useState(['', '', '', '']);
+  const [cardNumber, setCardNumber] = useState<string[]>(['', '', '', '']);
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
 
+  //funkce pro zachyceni zmen vstupnich poli
   const handleChange = (index: number, value: string) => {
-    if (/^\d*$/.test(value) && value.length <= 4) {
-      const newValues = [...values];
-      newValues[index] = value;
-      setValues(newValues);
+    const newCardNumber = [...cardNumber];
+    newCardNumber[index] = value;
+    setCardNumber(newCardNumber);
 
-      // Move focus to the next input if 4 digits are entered
-      if (value.length === 4 && index < 3) {
-        inputRefs.current[index + 1]?.focus();
-      }
-    }
-  };
-
-  const handleKeyDown = (
-    index: number,
-    event: React.KeyboardEvent<HTMLInputElement>,
-  ) => {
-    if (event.key === 'Backspace' && values[index] === '' && index > 0) {
-      inputRefs.current[index - 1]?.focus();
+    // presune focus na dalsi 4 cislice
+    if (value.length === 4 && index < 3) {
+      inputRefs.current[index + 1]?.focus();
     }
   };
 
   return (
-    <div style={{ display: 'flex', gap: '10px' }}>
-      {values.map((value, index) => (
+    <div>
+      {cardNumber.map((num, index) => (
         <input
           key={index}
           type="text"
-          maxLength={4}
-          value={value}
+          value={num}
           onChange={(e) => handleChange(index, e.target.value)}
-          onKeyDown={(e) => handleKeyDown(index, e)}
+          maxLength={4}
           ref={(el) => (inputRefs.current[index] = el)}
-          style={{ width: '50px', textAlign: 'center' }}
         />
       ))}
     </div>

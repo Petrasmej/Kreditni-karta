@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import CreditCardInput from './creditCardInput/CreditCardInput';
+import CreditCardInput from '../creditCardInput/CreditCardInput';
+import './Payment.css';
 
 export const Payment: React.FC = () => {
   const [cardInputVisible, setCardInputVisible] = useState<boolean>(false);
@@ -20,12 +21,15 @@ export const Payment: React.FC = () => {
 
   return (
     <div className="payment">
-      <button onClick={handlePay}>Zaplatit</button>
-      {cardInputVisible ? (
+      {!cardInputVisible ? (
+        <button className="button" onClick={handlePay}>
+          Insert details
+        </button>
+      ) : (
         <div ref={cardInputRef}>
           <CreditCardInput />
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

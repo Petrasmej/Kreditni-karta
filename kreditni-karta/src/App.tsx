@@ -1,11 +1,15 @@
 import './App.css';
-import Payment from './payment/Payment';
+import Payment from './components/payment/Payment';
+import { Card } from './components/card/Card';
 
 function App() {
   return (
     <>
-      <h1>Kreditní karta</h1>
-      <Payment />
+      <h1 className="project">Project - Credit Card</h1>
+      <div className="container">
+        <Card />
+        <Payment />
+      </div>
     </>
   );
 }

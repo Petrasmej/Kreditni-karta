@@ -1,0 +1,123 @@
+.card {
+  margin-top: 20px;
+  padding: 20px 20px 20px 20px;
+  width: 420px;
+  height: 260px;
+  background-image: url("../../../public/background.jpg");
+  background-size: cover;
+  background-color: #003878;
+  color: #ffffff;
+  border-radius: 12px;
+  position: absolute;
+  top: -200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.card__header--right {
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-right: 16px;
+}
+
+.card__header--left {
+  margin-left: 16px;
+  margin-bottom: -20px;
+  text-align: left;
+}
+
+
+.card__context {
+  margin: 0 16px;
+  height: 24px;
+  font-family: Inconsolata;
+  font-size: 20px;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  /*@media (min-width: 350px) {
+      height: 30px;
+      font-size: 22px;
+      gap: 12px
+    }
+
+    @media (min-width: 400px) {
+      height: 36px;
+      font-size: 27px;
+      gap: 13px;
+    }
+
+    @media (min-width: 450px) {
+      height: 42px;
+      font-size: 30px;
+      gap: 14px;
+    }
+
+    @media (min-width: 500px) {
+      height: 48px;
+      font-size: 32px;
+      gap: 16px;
+    }
+
+    @media (min-width: 550px) {
+      height: 54px;
+      font-size: 36px;
+      gap: 18px;
+    }*/
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card__footer--title {
+  margin: 0 16px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+
+.card__row {
+  margin: 0 16px;
+  height: 27px;
+  font-family: Inconsolata;
+  font-size: 18px;
+}
+
+.card__right {
+  text-align: right;
+}
+
+.mastercard {
+  margin: 0;
+  font-size: 15px
+}
+
+.logo {
+  height: 40px;
+  width: 70px;
+}
+
+.chip {
+  width: 36px;
+}
+
+.username {
+  text-transform: uppercase;
+}

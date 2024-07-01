@@ -3,9 +3,8 @@
   padding: 20px 20px 20px 20px;
   width: 420px;
   height: 260px;
-  background-image: url("../../../public/background.jpg");
+  background-image: url("/background.jpg");
   background-size: cover;
-  background-color: #003878;
   color: #ffffff;
   border-radius: 12px;
   position: absolute;
@@ -42,8 +41,9 @@
   margin: 0 16px;
   height: 24px;
   font-family: Inconsolata;
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 4px;
   display: flex;
   flex-direction: row;
   gap: 10px;

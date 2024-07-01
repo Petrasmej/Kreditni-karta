@@ -1,8 +1,11 @@
+import { useSettings } from '../../settings-hooks';
 import './Card.css';
 import emvChip from '/emv-chip.svg';
 import logo from '/logo-mastercard.svg';
 
 export const Card = () => {
+  const { first, second, third, fourth, cardHolder, cardValid } = useSettings();
+
   return (
     <div className="card">
       <div className="card__header">
@@ -17,19 +20,19 @@ export const Card = () => {
         </p>
       </div>
       <p className="card__context">
-        <span>0000</span>
-        <span>0000</span>
-        <span>0000</span>
-        <span>0000</span>
+        <span>{first}</span>
+        <span>{second}</span>
+        <span>{third}</span>
+        <span>{fourth}</span>
       </p>
       <div className="card__footer">
         <div className="card__left">
           <p className="card__footer--title">Card holder</p>
-          <p className="card__row username">name...</p>
+          <p className="card__row username">{cardHolder}</p>
         </div>
         <div className="card__right">
           <p className="card__footer--title">Valid thru</p>
-          <p className="card__row">12/24</p>
+          <p className="card__row">{cardValid}</p>
         </div>
       </div>
     </div>
